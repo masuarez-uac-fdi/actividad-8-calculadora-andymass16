@@ -1,6 +1,6 @@
 # fdi-its-diseno-web-actividad-8-calculadora
-Repositorio Base para la Actividad 8 de la Materia DISEÑO WEB (001028-1149-16) FI.ITS (Prueba)
-1234543212
+Repositorio Base para la Actividad 8 de la Materia DISEÑO WEB (001028-1149-16) FI.ITS
+
 <b>Objetivo</b>.- Implementar una calculadora con las operaciones aritméticas básicas (suma, resta, producto y división) por medio de HTML, PHP y AJAX.
 
 <b>Estructura del Repositorio Base</b>.- un archivo HTML (calculadora.html) y cuatro archivos PHP (suma.php, resta.php, producto.php, division.php). 

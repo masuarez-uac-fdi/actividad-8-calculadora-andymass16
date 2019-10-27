@@ -1,1 +1,52 @@
 <!--Implementación de la interfaz de usuario-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora AJAX</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<h1 id="Titulo">CalculAJAX</h1>
+	<div id= "Contenedor">
+		<div id="Pantalla">
+			<div id="Resultado" style="font-size: 40px; color: black; font-family: monospace; float: right;">0</div>
+		</div>
+		<div id="Entradas">
+			<input class="entris" type="number" placeholder="Introduce un numero" id="Num1"></input>
+			<input class="entris" type="number" placeholder="Introduce un numero" id="Num2"></input>
+		</div>
+		<div id="Operaciones">
+			<!--<div class="botones"><button type="button" onclick="Peticion('suma')">Sumar</button></div>
+			<div class="botones"><button type="button" onclick="Peticion('resta')">Restar</button></div>
+			<div class="botones"><button type="button" onclick="Peticion('producto')">Multiplicar</button></div>
+			<div class="botones"><button type="button" onclick="Peticion('division')">Dividir</button></div>-->
+			<div class="botones"><a onclick="Peticion('suma')" >Sumar</a></div> 
+			<div class="botones"><a onclick="Peticion('resta')" >Restar</a></div> 
+			<div class="botones"><a onclick="Peticion('producto')" >Multiplicar</a></div> 
+			<div class="botones"><a onclick="Peticion('division')" >Dividir</a></div> 
+		</div>
+	</div>
+	<script>
+		function Peticion(opc){
+			var input1 = document.getElementById("Num1").value;
+			var input2 = document.getElementById("Num2").value;
+			if(input1 =="" || input2 == ""){
+				document.getElementById("Resultado").innerHTML ="LLena ambos campos :(";
+			}else{
+					var obj = new XMLHttpRequest(); 
+					var input1 = document.getElementById("Num1").value;
+		 		    var input2 = document.getElementById("Num2").value;
+					obj.open('POST',opc+'.php',true);
+					obj.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+					obj.onreadystatechange=function(){
+						if (this.readyState == 4 && this.status == 200) {
+						    document.getElementById("Resultado").innerHTML =
+						    this.responseText;
+			      		}
+					}
+				obj.send('Num1='+input1+'&Num2='+input2);
+			}
+		}
+	</script>
+</body>
+</html>
